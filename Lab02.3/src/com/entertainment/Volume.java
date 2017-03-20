@@ -21,6 +21,9 @@ public interface Volume {
 		setVolume(0);
 	}
 
+	/**
+	 * @param volumes
+	 */
 	public static void silenceAll(Volume... volumes) {
 		for(Volume vol : volumes) {
 			vol.silence();
