@@ -36,7 +36,7 @@ public class InterfaceMethodsTest {
     // iterate over the array, silencing each element
     for (Volume vol : volArray) {
       // TODO: uncomment below once you add the silence() method to Volume
-      // vol.silence();
+      vol.silence();
       
       // ACTUAL TEST - make sure each element is silent
       System.out.println("volume is zero: " + (vol.getVolume() == 0));
@@ -46,7 +46,7 @@ public class InterfaceMethodsTest {
   public void testStaticMethods() {
     System.out.println("-- testStaticMethods --");
     // TODO: uncomment below once you add the silenceAll() method to Volume
-    // Volume.silenceAll(volArray);
+     Volume.silenceAll(volArray);
     
     // ACTUAL TEST - iterate over the array, testing that they are all silent
     for (Volume vol : volArray) {

@@ -10,34 +10,43 @@ package com.javatunes.personnel;
 
 import java.sql.Date;
 
-public class SalariedEmployee
-extends Employee {
-  private Double salary;
-  
-  public SalariedEmployee() {
-  }
+import gov.irs.TaxPayer;
 
-  public SalariedEmployee(String name, Date hireDate) {
-    setName(name);
-    setHireDate(hireDate);
-  }
-  
-  public SalariedEmployee(String name, Date hireDate, Double salary) {
-    setName(name);
-    setHireDate(hireDate);
-    setSalary(salary);
-  }
-  
-  public Double getSalary() {
-    return this.salary;
-  }
-  public void setSalary(Double salary) {
-    this.salary = salary;
-  }
-  
-  @Override
-  public String toString() {
-    return getClass().getSimpleName() + ": name=" + getName() + ", hireDate=" + getHireDate() + 
-      ", salary=" + getSalary();
-  }
+public class SalariedEmployee extends Employee implements TaxPayer {
+	private Double salary;
+
+	public SalariedEmployee() {
+	}
+
+	public SalariedEmployee(String name, Date hireDate) {
+		setName(name);
+		setHireDate(hireDate);
+	}
+
+	public SalariedEmployee(String name, Date hireDate, Double salary) {
+		setName(name);
+		setHireDate(hireDate);
+		setSalary(salary);
+	}
+
+	public Double getSalary() {
+		return this.salary;
+	}
+
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getSimpleName() + ": name=" + getName() + ", hireDate=" + getHireDate() + ", salary="
+				+ getSalary();
+	}
+
+	@Override
+	public double payTaxes() {
+		double taxes = TaxPayer.SALARIED_TAX_RATE * salary;
+		System.out.println("Salaried employee: " +  getName() + " paid "+ taxes);
+		return taxes;
+	}
 }
