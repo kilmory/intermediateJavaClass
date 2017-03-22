@@ -16,13 +16,20 @@ implements Comparable<Television> {
   public static final int MAX_VOLUME = 100;
   public static final int MIN_CHANNEL = 1;
   public static final int MAX_CHANNEL = 999;
+  private static final int MIN_DISALLOWED_CHANNEL = 500;  // for parental controls
+  private static final int MAX_DISALLOWED_CHANNEL = 599;  // for parental controls
   
   private String brand;
   private int volume;
   private DisplayType display;
+  private boolean parentalControlEnabled;
   private Tuner tuner = new Tuner();  // set up internally and used for channel management
   
   public Television() {
+  }
+  
+  public Television(String brand) {
+    setBrand(brand);
   }
   
   public Television(String brand, int volume)
@@ -68,14 +75,15 @@ implements Comparable<Television> {
   }
   
   public void changeChannel(int channel)
-  throws InvalidChannelException {
-    if (channel >= MIN_CHANNEL && channel <= MAX_CHANNEL) {
-      tuner.setChannel(channel);  // delegate to contained Tuner object
-    }
-    else {
+  throws InvalidChannelException, ChannelDisallowedException {
+    if (channel < MIN_CHANNEL || channel > MAX_CHANNEL) {
       throw new InvalidChannelException("Invalid channel: " + channel + ". " +
-        "Allowed range: [" + MIN_CHANNEL + "," + MAX_CHANNEL + "].");
+          "Allowed range: [" + MIN_CHANNEL + "," + MAX_CHANNEL + "].");
     }
+    if (isParentalControlEnabled() && (channel >= MIN_DISALLOWED_CHANNEL && channel <= MAX_DISALLOWED_CHANNEL)) {
+      throw new ChannelDisallowedException("Disallowed channel, parental controls enabled.");
+    }
+    tuner.setChannel(channel);
   }
   
   public DisplayType getDisplay() {
@@ -83,6 +91,28 @@ implements Comparable<Television> {
   }
   public void setDisplay(DisplayType display) {
     this.display = display;
+  }
+  
+  // parental control methods - JavaBeans-style accessor methods and "control" methods are both provided
+  public boolean isParentalControlEnabled() {
+    return this.parentalControlEnabled;
+  }
+  public void setParentalControlEnabled(boolean parentalControl) {
+    this.parentalControlEnabled = parentalControl;
+    
+    if (isParentalControlEnabled()) {
+      // reset channel if necessary (we might be on an "adult" channel prior to enabling parental control)
+      int currentChannel = getCurrentChannel();
+      if (currentChannel >= MIN_DISALLOWED_CHANNEL && currentChannel <= MAX_DISALLOWED_CHANNEL) {
+        tuner.setChannel(1);
+      }
+    }
+  }
+  public void enableParentalControl() {
+    setParentalControlEnabled(true);
+  }
+  public void disableParentalControl() {
+    setParentalControlEnabled(false);
   }
 
   public String toString() { 

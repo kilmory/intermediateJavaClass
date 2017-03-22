@@ -8,6 +8,7 @@
  */
 package com.entertainment.client;
 
+import com.entertainment.ChannelDisallowedException;
 import com.entertainment.InvalidChannelException;
 import com.entertainment.Television;
 
@@ -45,6 +46,9 @@ public class TelevisionValidationTest {
       e.printStackTrace();
       // System.out.println(e);
       // System.out.println(e.getMessage());
+    }
+    catch (ChannelDisallowedException e) {
+      System.out.println(e);
     }
     /* catch-all handler
     catch (Exception e) {

@@ -11,6 +11,7 @@ package com.entertainment.client;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import com.entertainment.ChannelDisallowedException;
 import com.entertainment.InvalidChannelException;
 import com.entertainment.Television;
 import com.entertainment.TelevisionBrandChannelComparator;
@@ -24,7 +25,7 @@ public class TelevisionTestSort {
     try {
       tvList = createTelevisionList();
     }
-    catch (InvalidChannelException e) {
+    catch (InvalidChannelException | ChannelDisallowedException e) {
       e.printStackTrace();
     }
     
@@ -57,7 +58,7 @@ public class TelevisionTestSort {
   
   
   private static List<Television> createTelevisionList()
-  throws InvalidChannelException {
+  throws InvalidChannelException, ChannelDisallowedException {
     Television tv1 = new Television("Zenith", 30);
     tv1.changeChannel(44);
     
