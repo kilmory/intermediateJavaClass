@@ -15,27 +15,28 @@ import com.javatunes.corp.Corporation;
 import gov.irs.holder.IRS;
 
 public class IRSEnumTest {
-  
-  /**
-   * TODO: verify that two calls to IRSEnum.getInstance() return the same instance.
-   */
-  @Test
-  public void testSingleton() {
-    
-  }
-  
-  @Test
+
+	/**
+	 * TODO: verify that two calls to IRSEnum.getInstance() return the same
+	 * instance.
+	 */
+	@Test
+	public void testSingleton() {
+
+	}
+
+	@Test
   public void testClassLoading() {
-    // TODO: call IRSEnum.touch() and note the output
+      IRSEnum.touch();// and note the output
     
     // TODO: call IRSEnum.getInstance() and note the output
-    
+      IRSEnum.getInstance();
   }
-  
-  @Test
-  public void testNormalClientUsage() {
-    IRSEnum irs = IRSEnum.getInstance();
-    irs.register(new Corporation("JavaTunes"));
-    irs.collectTaxes();
-  }
+
+	@Test
+	public void testNormalClientUsage() {
+		IRSEnum irs = IRSEnum.getInstance();
+		irs.register(new Corporation("JavaTunes"));
+		irs.collectTaxes();
+	}
 }
