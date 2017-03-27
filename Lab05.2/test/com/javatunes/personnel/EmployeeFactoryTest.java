@@ -45,21 +45,39 @@ public class EmployeeFactoryTest {
     heMap.put("hours",    "40.0");
   }
   
-  /**
-   * TASK: verify that passing seMap into your factory returns a SalariedEmployee
-   * to check an object's type, you can use instanceof or check its Class object:
-   *   assertEquals(SalariedEmployee.class, emp.getClass())
-   */
   @Test
   public void testCreateEmployeeSalaried() {
-    // TODO
+    // get Employee from factory - exact type driven by "type" entry in map
+    Employee emp = EmployeeFactory.createEmployee(seMap);
+    verifyBaseProperties(emp);  // name, hireDate
+    
+    // check type of object returned from factory
+    assertEquals(SalariedEmployee.class, emp.getClass());
+    assertTrue(emp instanceof SalariedEmployee);  // alternative - what's the difference?
+    
+    // downcast and check subclass-specific properties
+    SalariedEmployee salariedEmp = (SalariedEmployee) emp;
+    assertEquals(50000.0, salariedEmp.getSalary(), .001);
   }
-  
-  /**
-   * TASK: verify that passing heMap into your factory returns a HourlyEmployee
-   */
+
   @Test
   public void testCreateEmployeeHourly() {
-    // TODO
+    // get Employee from factory - exact type driven by "type" entry in map
+    Employee emp = EmployeeFactory.createEmployee(heMap);
+    verifyBaseProperties(emp);
+    
+    // check type of object returned from factory
+    assertEquals(HourlyEmployee.class, emp.getClass());
+    assertTrue(emp instanceof HourlyEmployee);  // alternative - what's the difference?
+    
+    // safely downcast and check subclass-specific properties
+    HourlyEmployee hourlyEmp = (HourlyEmployee) emp;
+    assertEquals(50.0, hourlyEmp.getRate(), .001);
+    assertEquals(40.0, hourlyEmp.getHours(), .001);
+  }
+
+  private void verifyBaseProperties(Employee emp) {
+    assertEquals("Jackie", emp.getName());
+    assertEquals("1990-08-24", emp.getHireDate().toString());
   }
 }
