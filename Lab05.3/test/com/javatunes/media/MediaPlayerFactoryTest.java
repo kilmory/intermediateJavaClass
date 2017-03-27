@@ -18,6 +18,8 @@ public class MediaPlayerFactoryTest {
   
   private static final String RADIO_FACTORY_CLASS_NAME = "com.javatunes.media.RadioMediaPlayerFactory";
   private static final String INTERNET_FACTORY_CLASS_NAME = "com.javatunes.media.InternetMediaPlayerFactory";
+  
+  private static final String VEHICLE_FACTORY_CLASS_NAME = "com.javatunes.media.VehicleMediaPlayerFactory";
 
   @Test
   public void testRadioPlayer() {
@@ -36,6 +38,16 @@ public class MediaPlayerFactoryTest {
     assertEquals(InternetMediaPlayer.class, player.getClass());
     assertEquals("[http, https, ftp]", Arrays.toString(player.getSupportedContentTypes()));
     assertEquals("InternetMediaPlayer playing internet media", player.play());
+    System.out.println(player.play());
+  }
+  
+  @Test
+  public void testVehiclePlayer() {
+    MediaPlayerFactory factory = MediaPlayerFactory.newInstance(VEHICLE_FACTORY_CLASS_NAME);
+    MediaPlayer player = factory.newPlayer();
+    assertEquals(VehicleMediaPlayer.class, player.getClass());
+    assertEquals("[AM, FM, XM, AUX, CD]", Arrays.toString(player.getSupportedContentTypes()));
+    assertEquals("VehicleMediaPlayer playing Vehicle media", player.play());
     System.out.println(player.play());
   }
 }
