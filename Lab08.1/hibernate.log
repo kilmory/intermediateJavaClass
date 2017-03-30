@@ -1,0 +1,72 @@
+2017-03-29 19:20:30,327  INFO [org.hibernate.annotations.common.Version] - Hibernate Commons Annotations 3.2.0.Final
+2017-03-29 19:20:30,327  INFO [org.hibernate.cfg.Environment] - Hibernate 3.6.6.Final
+2017-03-29 19:20:30,327  INFO [org.hibernate.cfg.Environment] - hibernate.properties not found
+2017-03-29 19:20:30,327  INFO [org.hibernate.cfg.Environment] - Bytecode provider name : javassist
+2017-03-29 19:20:30,327  INFO [org.hibernate.cfg.Environment] - using JDK 1.4 java.sql.Timestamp handling
+2017-03-29 19:20:30,358  INFO [org.hibernate.ejb.Version] - Hibernate EntityManager 3.6.6.Final
+2017-03-29 19:20:30,452  INFO [org.hibernate.cfg.AnnotationBinder] - Binding entity from annotated class: com.javatunes.jpa.MusicItem
+2017-03-29 19:20:30,467  INFO [org.hibernate.cfg.annotations.EntityBinder] - Bind entity com.javatunes.jpa.MusicItem on table ITEM
+2017-03-29 19:20:30,499  INFO [org.hibernate.cfg.Configuration] - Hibernate Validator not found: ignoring
+2017-03-29 19:20:30,499  INFO [org.hibernate.validator.util.Version] - Hibernate Validator 4.0.2.GA
+2017-03-29 19:20:30,499  INFO [org.hibernate.validator.engine.resolver.DefaultTraversableResolver] - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+2017-03-29 19:20:30,530  INFO [org.hibernate.validator.engine.resolver.DefaultTraversableResolver] - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+2017-03-29 19:20:30,530  INFO [org.hibernate.validator.engine.resolver.DefaultTraversableResolver] - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+2017-03-29 19:20:30,530  INFO [org.hibernate.cfg.search.HibernateSearchEventListenerRegister] - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2017-03-29 19:20:30,530  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - Using Hibernate built-in connection pool (not for production use!)
+2017-03-29 19:20:30,530  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - Hibernate connection pool size: 1
+2017-03-29 19:20:30,530  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - autocommit mode: true
+2017-03-29 19:20:30,530  WARN [org.hibernate.connection.DriverManagerConnectionProvider] - no JDBC Driver class was specified by property hibernate.connection.driver_class
+2017-03-29 19:20:30,530  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - using driver: null at URL: jdbc:derby:JavaTunesEmbeddedDB
+2017-03-29 19:20:30,530  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - connection properties: {autocommit=true, release_mode=auto}
+2017-03-29 19:20:30,811  INFO [org.hibernate.dialect.Dialect] - Using dialect: org.hibernate.dialect.DerbyDialect
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Database ->
+       name : Apache Derby
+    version : 10.10.1.1 - (1458268)
+      major : 10
+      minor : 10
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Driver ->
+       name : Apache Derby Embedded JDBC Driver
+    version : 10.10.1.1 - (1458268)
+      major : 10
+      minor : 10
+2017-03-29 19:20:30,827  INFO [org.hibernate.transaction.TransactionFactoryFactory] - Using default transaction strategy (direct JDBC transactions)
+2017-03-29 19:20:30,827  INFO [org.hibernate.transaction.TransactionManagerLookupFactory] - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Automatic flush during beforeCompletion(): disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Automatic session close at end of transaction: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Scrollable result sets: enabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - JDBC3 getGeneratedKeys(): disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Connection release mode: auto
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Default batch fetch size: 1
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Generate SQL with comments: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Order SQL updates by primary key: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Order SQL inserts for batching: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2017-03-29 19:20:30,827  INFO [org.hibernate.hql.ast.ASTQueryTranslatorFactory] - Using ASTQueryTranslatorFactory
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Query language substitutions: {}
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - JPA-QL strict compliance: enabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Second-level cache: enabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Query cache: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+2017-03-29 19:20:30,827  INFO [org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge] - Cache provider: org.hibernate.cache.NoCacheProvider
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Optimize cache for minimal puts: disabled
+2017-03-29 19:20:30,827  INFO [org.hibernate.cfg.SettingsFactory] - Structured second-level cache entries: disabled
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Echoing all SQL to stdout
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Statistics: disabled
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Deleted entity synthetic identifier rollback: disabled
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Default entity-mode: pojo
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Named query checking : enabled
+2017-03-29 19:20:30,842  INFO [org.hibernate.cfg.SettingsFactory] - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+2017-03-29 19:20:30,842  INFO [org.hibernate.impl.SessionFactoryImpl] - building session factory
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@189cbd7c
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [clob] overrides previous : org.hibernate.type.ClobType@7bf3a5d8
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@7bf3a5d8
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [blob] overrides previous : org.hibernate.type.BlobType@42e25b0b
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@42e25b0b
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@39b43d60
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@44be0077
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@2205a05d
+2017-03-29 19:20:30,842  INFO [org.hibernate.type.BasicTypeRegistry] - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@72ef8d15
+2017-03-29 19:20:30,936  INFO [org.hibernate.impl.SessionFactoryObjectFactory] - Not binding factory to JNDI, no JNDI name configured
+2017-03-29 19:20:30,967 DEBUG [org.hibernate.SQL] - select musicitem0_.ITEM_ID as ITEM1_0_0_, musicitem0_.artist as artist0_0_, musicitem0_.LIST_PRICE as LIST3_0_0_, musicitem0_.num as num0_0_, musicitem0_.price as price0_0_, musicitem0_.RELEASE_DATE as RELEASE6_0_0_, musicitem0_.title as title0_0_ from ITEM musicitem0_ where musicitem0_.ITEM_ID=?
+2017-03-29 19:20:31,139  INFO [org.hibernate.impl.SessionFactoryImpl] - closing
+2017-03-29 19:20:31,139  INFO [org.hibernate.connection.DriverManagerConnectionProvider] - cleaning up connection pool: jdbc:derby:JavaTunesEmbeddedDB

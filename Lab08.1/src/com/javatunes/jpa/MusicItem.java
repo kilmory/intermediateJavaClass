@@ -11,22 +11,29 @@ package com.javatunes.jpa;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
+@Table(name = "ITEM")
 public class MusicItem
 implements Serializable {
   // PROPERTIES
   @Id
+  @Column(name="ITEM_ID")
   private Long id;  // PK column in ITEM table
+  //@Column
   private String num;
+  //@Column
   private String title;
+ // @Column
   private String artist;
+  @Column(name="RELEASE_DATE")
   private Date releaseDate;
+  @Column(name="LIST_PRICE")
   private BigDecimal listPrice;
   private BigDecimal price;
   
