@@ -8,6 +8,8 @@
  */
 package com.javatunes.personnel;
 
+import com.fastjava.annotation.Fast;
+
 /**
  * TODO: all methods in this class should run 25% faster.
  */
@@ -18,6 +20,7 @@ public class Employee {
    * OSHA regulations require extra logging about the performance improvement,
    * as well as a description of why we're using this technology from FastJava.com.
    */
+	@Fast
   public void work() {
     System.out.println("Employee working hard");
   }
