@@ -9,12 +9,17 @@
 package com.javatunes.catalog;
 
 // TODO: Uncomment the static imports that we supply as you need them
-// import static java.util.Comparator.*;
-// import static java.util.stream.Collectors.*;
+import static java.util.Comparator.comparing;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-import static org.junit.Assert.*;
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -50,7 +55,18 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testTitlesPopSortNaturalOrder() {
-    // TODO
+    
+	  List<String> titles = allMusicItems.stream()
+	  .filter(item -> item.getMusicCategory().equals(MusicCategory.POP))
+	  .map(MusicItem::getTitle)
+	  .sorted()
+	  .collect(Collectors.toList());
+	  
+	  System.out.println(titles);
+	 
+	  
+	
+	  
   }
   
   /**
@@ -60,7 +76,11 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testAllPriceGreaterThanEqual() {
-    // TODO
+	  List<MusicItem> items = allMusicItems.stream()
+	  .filter(item -> item.getPrice() >= 10.00)
+	  .collect(Collectors.toList());
+	  
+	  System.out.println(items.toString());
   }
   
   /**
@@ -70,7 +90,11 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testAnyMusicCategory() {
-    // TODO
+    
+	  boolean result = allMusicItems.stream()
+	  .anyMatch(item -> item.getMusicCategory().equals(MusicCategory.JAZZ));
+	  
+	  assertFalse(result);
   }
   
   /**
@@ -80,7 +104,11 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testCountMusicCategory() {
-    // TODO
+    long result = allMusicItems.stream()
+    		.filter(item -> item.getMusicCategory().equals(MusicCategory.BLUES))
+    		.count();
+    
+    assertEquals(2,result);
   }
   
   /**
@@ -90,7 +118,11 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testPrintAny3MusicCategory() {
-    // TODO
+    allMusicItems.stream()
+    .filter(item -> item.getMusicCategory().equals(MusicCategory.ROCK))
+    .limit(3)
+    .forEach(item -> System.out.println(item));
+    
   }
   
   /**
@@ -100,7 +132,12 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testAvgPrice3Newest() {
-    // TODO
+    OptionalDouble result = allMusicItems.stream()
+    		.sorted(comparing(MusicItem::getReleaseDate).reversed())
+    		.limit(3)
+    		.mapToDouble(m -> m.getPrice())
+    		.average();
+    System.out.println(result);		
   }
   
   /**
@@ -111,7 +148,12 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testPrice2HighestSortTitle() {
-    // TODO
+	    List<MusicItem> items = allMusicItems.stream()
+	    	      .sorted(comparing(MusicItem::getPrice).reversed().thenComparing(MusicItem::getTitle))
+	    	      .limit(2)
+	    	      .collect(Collectors.toList());
+	    
+	    System.out.println(items);
   }
   
   /**
@@ -121,6 +163,13 @@ public class AdvancedCatalogStreamTest {
    */
   @Test
   public void testMinPriceMusicCategory() {
-    // TODO
+    OptionalDouble price = allMusicItems.stream()
+    		.filter(item -> item.getMusicCategory().equals(MusicCategory.POP))
+    		.sorted(comparing(MusicItem::getPrice))
+    		.mapToDouble(m -> m.getPrice())
+    		.min();
+    
+    System.out.println(price);
+    		
   }
 }
